@@ -1,1 +1,30 @@
+#https://programmers.co.kr/learn/courses/30/lessons/92334
 
+def solution(id_list, report, k):
+    
+    from collections import defaultdict
+    data=defaultdict(list)
+    for_stop=defaultdict(int)
+    for i in report:
+        i=i.split()
+        if i[1] not in data[i[0]]:
+            data[i[0]].append(i[1])
+            for_stop[i[1]]+=1
+    data=dict(data)
+    for_stop=dict(for_stop)
+
+    result=dict(defaultdict(int))
+    for j in id_list:
+        result[j]=0
+
+    for j in for_stop.items():
+        for m in data.items():
+            if j[1]>=k and j[0] in m[1]:
+                result[m[0]]+=1
+
+    stop=[]
+    for l in result.values():
+        stop.append(l)
+
+    answer = stop
+    return answer
