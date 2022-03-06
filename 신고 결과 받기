@@ -26,5 +26,5 @@ def solution(id_list, report, k):
     for l in result.values():
         stop.append(l)
 
-    answer = stop
+    answer=stop
     return answer
