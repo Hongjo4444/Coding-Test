@@ -50,4 +50,4 @@
 
     def reverse(string):
         r={'(':')',')':'('} #key,value 이용해서 '('는')'로, ')'는 '('로 바꿔주는 코드 만든것
-        return [r[s] for s in string] #for 다 수행하고 return
+        return [r[s] for s in string] #for 다 수행하고 return 해줌
