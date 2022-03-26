@@ -14,8 +14,8 @@
             answer+='('
             answer+=solution(v)
             answer+=')'
-            u=u[1:-1]
-            for i in reverse(u):
+            u=u[1:-1] #u의 앞뒤 뭄ㄴ자 제거
+            for i in reverse(u): #나머지 문자의 괄호 방향 뒤집기
                 answer+=i
             return answer
 
@@ -49,5 +49,5 @@
         return u,v
 
     def reverse(string):
-        r={'(':')',')':'('}
-        return [r[s] for s in string]
+        r={'(':')',')':'('} #key,value 이용해서 '('는')'로, ')'는 '('로 바꿔주는 코드 만든것
+        return [r[s] for s in string] #for 다 수행하고 return 
