@@ -1,5 +1,7 @@
 [page](https://programmers.co.kr/learn/courses/30/lessons/86051)
 
+python
+ 
     def solution(numbers):
 
         data=list(range(0,10))
@@ -13,8 +15,7 @@
         answer = result
         return answer
 
-
-
+c
 
     #include <stdio.h>
     #include <stdbool.h>
