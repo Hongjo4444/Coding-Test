@@ -1,47 +1,22 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
-typedef struct kakao
+int solution(int numbers[], size_t numbers_len,char* len,int str_len_s,int str_len_i)
 {
-    char* to[1000];
-    int warning;
-} data;
-
-// id_list_len은 배열 id_list의 길이입니다.
-// report_len은 배열 report의 길이입니다.
-// 파라미터로 주어지는 문자열은 const로 주어집니다. 변경하려면 문자열을 복사해서 사용하세요.
-int* solution(const char* id_list[], size_t id_list_len, const char* report[], size_t report_len, int k)
-{
-    // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
-    int* answer = (int*)malloc(sizeof(int)*id_list_len);
-    // printf("%s %d %s %d %d\n",id_list[0],id_list_len,report[0],report_len,k);
-    
-    for(int i=0;i<id_list_len;i++)
-    {
-        data id_list[i];
-    }
-    
-    for(int i=0;i<report_len;i++)
-    {
-        char name[10];
-        strcpy(name,report[i]);
-        name.warning=1;
-    }
-
-    return answer;
-    free(answer);
+    printf("%d %d %s %d %d",numbers[3],numbers_len,len,str_len_s,str_len_i);
+    return 0;
 }
 
 int main()
 {
-    const char* id_list[]={"muzi", "frodo", "apeach", "neo"};
-    size_t id_list_len=sizeof(id_list)/sizeof(char*);
-    const char* report[]={"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
-    size_t report_len=sizeof(report)/sizeof(char*);
-    int k=2;
+    int numbers[]={1,2,3,4,6,7,8,0}; //입력이 배열일때
+    size_t numbers_len=sizeof(numbers)/sizeof(int); //입력이 배열일때 배열의 크기
+    char* len="1924"; //입력이 문자열일때
+    int  str_len_s=strlen(len); //입력이 문자열일때 문자열 길이
+    int  str_len_i=sizeof(len)/sizeof(int); //틀린것
 
-    solution(id_list,id_list_len,report,report_len,k);
+    solution(numbers,numbers_len,len,str_len_s,str_len_i);
     return 0;
 }
