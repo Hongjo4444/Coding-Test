@@ -1,6 +1,6 @@
 [page](https://programmers.co.kr/learn/courses/30/lessons/92334)
 
-python
+py
 
     def solution(id_list, report, k):
 
