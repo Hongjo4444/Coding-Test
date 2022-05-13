@@ -1,5 +1,7 @@
 [page](https://programmers.co.kr/learn/courses/30/lessons/12931)
 
+c
+
     #include <stdio.h>
     #include <stdbool.h>
     #include <stdlib.h>
