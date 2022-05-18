@@ -30,7 +30,7 @@ c-방법1
         return answer;
     }
 
-c-방법2
+c-방법2(14~16 테스트케이스 오답)
 
     #include <stdio.h>
     #include <stdbool.h>
