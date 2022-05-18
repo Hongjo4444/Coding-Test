@@ -60,6 +60,6 @@ c-방법2
                 }
             }
         }
-        //printf("%s",answer);
+        // printf("%s",answer);
         return answer;
     }
