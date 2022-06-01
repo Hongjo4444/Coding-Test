@@ -20,3 +20,26 @@ py
 
 c
 
+    #include <stdio.h>
+    #include <stdbool.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <ctype.h>
+    #include <math.h>
+
+    int solution(int left, int right)
+    {
+        int answer = 0;
+        for(int i=left;i<right+1;i++)
+        {
+            int a=0;
+            for(int j=1;j<=i;j++)
+            {
+                if(i%j==0) a+=1;
+            }
+            if(a%2==0) answer+=i;
+            else answer-=i;
+        }
+        printf("%d",answer);
+        return answer;
+    }
