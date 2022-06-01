@@ -1,5 +1,7 @@
 [page](https://programmers.co.kr/learn/courses/30/lessons/77884)
 
+py
+
     def solution(left, right):
 
         result=0
@@ -15,3 +17,6 @@
 
         answer=result
         return answer
+
+c
+
