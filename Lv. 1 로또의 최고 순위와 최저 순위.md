@@ -82,3 +82,41 @@ c
 
         return answer;
     }
+
+c++
+
+    #include <string>
+    #include <vector>
+    #include <iostream>
+    #include <algorithm>
+
+    using namespace std;
+
+    vector<int> solution(vector<int> lottos, vector<int> win_nums)
+    {
+        vector<int> answer(2);
+        int zero=count(lottos.begin(),lottos.end(),0);
+        // cout << zero;
+
+        int win=0;
+        for(int i=0;i<win_nums.size();i++)
+        {
+            int temp_win=count(lottos.begin(),lottos.end(),win_nums[i]);
+            if(temp_win!=0)
+            {
+                win+=1;
+            }
+        }
+        // cout << win;
+
+        int maxi=zero+win;
+        int mini=win;
+
+        if(maxi>=2) answer[0]=7-maxi;
+        else answer[0]=6;
+        if(mini>=2) answer[1]=7-mini;
+        else answer[1]=6;
+
+        // cout << answer[1];
+        return answer;
+    }
