@@ -11,3 +11,40 @@
         answer = result
 
         return answer
+
+c++
+
+    #include <string>
+    #include <vector>
+    #include <iostream>
+    #include <algorithm>
+
+    using namespace std;
+
+    vector<int> solution(vector<int> array, vector<vector<int>> commands)
+    {
+        vector<int> answer;
+        for(int i=0;i<commands.size();i++)
+        {
+            vector<int> slice={array.begin()+commands[i][0]-1,array.begin()+commands[i][1]};
+            // for(int i=0;i<slice.size();i++)
+            // {
+            //     cout << slice[i] << " ";
+            // }
+            // cout << endl;
+            sort(slice.begin(),slice.end());
+            // for(int i=0;i<slice.size();i++)
+            // {
+            //     cout << slice[i] << " ";
+            // }
+            cout << endl;
+            answer.push_back(slice[commands[i][2]-1]);
+            // for(int i=0;i<answer.size();i++)
+            // {
+            //     cout << answer[i] << " ";
+            // }
+            cout << endl;
+        }
+
+        return answer;
+    }
