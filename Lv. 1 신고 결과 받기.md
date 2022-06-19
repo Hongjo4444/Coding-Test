@@ -108,3 +108,58 @@ c
 
         return answer;
     }
+
+c++
+
+    #include <iostream>
+    #include <string>
+    #include <vector>
+    #include <map>
+    #include <string.h>
+    #include <algorithm>
+
+    using namespace std;
+
+    vector<int> solution(vector<string> id_list, vector<string> report, int k)
+    {
+        vector<int> answer(id_list.size());
+        map<string,vector<string>> call_name;
+        map<string,int> call_num;
+
+        sort(report.begin(),report.end()); //unique 함수 사용 전 sort
+        report.erase(unique(report.begin(),report.end()),report.end()); //unique+erase로 중복 제거
+
+        int report_size=report.size();
+        for(int i=0;i<report_size;i++)
+        {
+            char report_data[22];
+            strcpy(report_data,report[i].c_str()); //strtok 사용을 위해 char*로 바꿔주기
+            string from=strtok(report_data," "); //strtok 사용
+            string to=strtok(NULL," ");
+            // cout << from << " ";
+            call_name[from].push_back(to);
+            call_num[to]++;
+        }
+
+        vector<string> result_name; //k번 이상 신고당하면 결과 이름에 추가
+        for(int i=0;i<call_num.size();i++)
+        {
+            if(call_num[id_list[i]]>=k)
+            {
+                result_name.push_back(id_list[i]);
+            }
+        }
+
+        for(int i=0;i<call_name.size();i++)
+        {
+            for(int j=0;j<result_name.size();j++)
+            {
+                auto it=find(call_name[id_list[i]].begin(),call_name[id_list[i]].end(),result_name[j]); //auto it 사용해서 있는지 찾기
+                if(it!=call_name[id_list[i]].end())
+                {
+                    answer[i]+=1;
+                }
+            }
+        }
+
+        return answer;
