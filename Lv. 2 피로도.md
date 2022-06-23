@@ -54,7 +54,7 @@ c++
         if(answer<h) answer=h;
         for(int i=0;i<n;i++)
         {
-            if(visited[i] || dungeons[i][0]>p) continue;
+            if(visited[i]==1 || dungeons[i][0]>p) continue;
             visited[i]=1;
             dfs(h+1,p-dungeons[i][1]);
             visited[i]=0;
