@@ -38,3 +38,34 @@ c
     
 c++
 
+    #include <iostream>
+    #include <string>
+    #include <vector>
+
+    using namespace std;
+
+    int answer=0;
+    int n;
+    int visited[8];
+    vector<vector<int>> dungeons;
+
+    void dfs(int h,int p)
+    {
+        if(answer<h) answer=h;
+        for(int i=0;i<n;i++)
+        {
+            if(visited[i] || dungeons[i][0]>p) continue;
+            visited[i]=1;
+            dfs(h+1,p-dungeons[i][1]);
+            visited[i]=0;
+        }
+    }
+
+    int solution(int k, vector<vector<int>> dungeons_origin)
+    {
+        dungeons=dungeons_origin;
+        n=dungeons.size();
+        dfs(0,k);
+        cout << answer;
+        return answer;
+    }
