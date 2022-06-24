@@ -42,7 +42,7 @@ c
         char front;
         char back;
         char* temp;
-        if(k>0)
+        if(k>0) //뒤로 k개만큼 보고 지금 인덱스값보다 큰 값 나오는 순간 지금 인덱스 
         {
             int start=0;
             while(k>0)
